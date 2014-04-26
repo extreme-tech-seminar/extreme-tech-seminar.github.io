@@ -1,4 +1,4 @@
-Subject: Invitation: Extreme Tech Seminar at CoreDial
+*Subject:* Invitation: Extreme Tech Seminar at CoreDial
 
 This is an announcement and an invitation to participate in the Tech Seminar at CoreDial
 
@@ -10,7 +10,7 @@ Spefically we want to start the Tech Seminar with a study of one of the most inf
 
 Each session will be a discussion led and moderated by someone, but in order for it to be most valuable if everyone actively participates.  The title [seminar](http://en.wikipedia.org/wiki/Seminar) was chosen based on the description on Wikipedia which fits our idea of how this should go.
 
-# When #
+# When is it held #
 
 I want to say biweekly, but sadly that means both every two weeks or twice a week.  So to avoid confusion I'll say fortnightly.  We want the first meeting to be Monday, May 5, 2014.  The meetings will start at 6 PM.  And let's count on about 60-90 minutes for them.
 
@@ -29,7 +29,7 @@ The CoreDial large conference room in suite 100.
 
 Any and all CoreDial employees who are interested in a topic are welcome to participate.  
 
-It is being organized by Kevin McAllister and Correl Roush.  
+It is being organized by Kevin McAllister and Correl Roush.  If you have questions send us email or come find us and talk to us.
 
 # How #
 
