@@ -1,8 +1,8 @@
-*Subject:* Invitation: Extreme Tech Seminar at CoreDial
+# *Subject:* Invitation: Extreme Tech Seminar at CoreDial #
 
 This is an announcement and an invitation to participate in the Tech Seminar at CoreDial
 
-# What #
+## What ##
 
 A regular meeting to systematically study of technology topics using significant works in the field as a guide.  
 
@@ -10,7 +10,7 @@ Spefically we want to start the Tech Seminar with a study of one of the most inf
 
 Each session will be a discussion led and moderated by someone, but in order for it to be most valuable if everyone actively participates.  The title [seminar](http://en.wikipedia.org/wiki/Seminar) was chosen based on the description on Wikipedia which fits our idea of how this should go.
 
-# When #
+## When ##
 
 I want to say biweekly, but sadly that means both every two weeks or twice a week.  So to avoid confusion I'll say fortnightly.  We want the first meeting to be Monday, May 5, 2014.  The meetings will start at 6 PM.  And let's count on about 60-90 minutes for them.
 
@@ -21,17 +21,17 @@ This means the first three meetings will be:
 
 We wanted it to be more frequent than monthly but weekly was too frequent.
 
-# Where #
+## Where ##
 
 The CoreDial large conference room in suite 100.
 
-# Who #
+## Who ##
 
 Any and all CoreDial employees who are interested in a topic are welcome to participate.  
 
 It is being organized by Kevin McAllister and Correl Roush.  If you have questions send us email or come find us and talk to us.
 
-# How #
+## How ##
 
 To participate you would do the assigned reading, work through some exercises if any, and show up ready to ask and answer questions.  The leader of the session will bring some discussion questions or exercises ready to ask the group.
 
@@ -39,6 +39,6 @@ The sessions will usually consist of questions/exercises driving the discussion.
 
 Go sign up for the Google Group [Extreme Tech Seminar](https://groups.google.com/d/forum/extreme-tech-seminar) to receive email announcements and to discuss things regarding the seminar.
 
-# Why #
+## Why ##
 
 To learn and grow.  To keep from getting too comfortable and lazy in our careers.  To learn from each other.  Because we're nerds and think programming and technology is awesome and want to share this sort of fun with other people who get excited about it too.
