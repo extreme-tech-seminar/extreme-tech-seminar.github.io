@@ -15,9 +15,10 @@ Each session will be a discussion led and moderated by someone, but in order for
 I want to say biweekly, but sadly that means both every two weeks or twice a week.  So to avoid confusion I'll say fortnightly.  We want the first meeting to be Monday, May 5, 2014.  The meetings will start at 6 PM.  And let's count on about 60-90 minutes for them.
 
 This means the first three meetings will be:
-5/5/2014
-5/19/2014
-6/2/2014
+
+* 5/5/2014
+* 5/19/2014
+* 6/2/2014
 
 We wanted it to be more frequent than monthly but weekly was too frequent.
 
