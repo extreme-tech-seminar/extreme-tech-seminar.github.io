@@ -1,6 +1,6 @@
-# *Subject:* Invitation: Extreme Tech Seminar at CoreDial #
+# *Subject:* Invitation: Extreme Tech Seminar #
 
-This is an announcement and an invitation to participate in the Tech Seminar at CoreDial
+This is an announcement and an invitation to participate in the Tech Seminar being held at CoreDial.
 
 ## What ##
 
