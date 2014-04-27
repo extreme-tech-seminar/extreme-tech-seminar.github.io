@@ -36,6 +36,8 @@ It is being organized by Kevin McAllister and Correl Roush.  If you have questio
 
 To participate you would do the assigned reading, work through some exercises if any, and show up ready to ask and answer questions.  The leader of the session will bring some discussion questions or exercises ready to ask the group.
 
+The text is available for free.  You can view the HTML version of it [here](http://mitpress.mit.edu/sicp/full-text/book/book.html).  Or there are some other ebook versions maintaned by third parties available [here](http://sicpebook.wordpress.com/ebook/).
+
 The sessions will usually consist of questions/exercises driving the discussion.  If you have your own questions, bring them and don't be shy.  The session leader's questions are to help us make sure we don't just sit in a room and not cover the interesting points in the chapter.
 
 Go sign up for the Google Group [Extreme Tech Seminar](https://groups.google.com/d/forum/extreme-tech-seminar) to receive email announcements and to discuss things regarding the seminar.
