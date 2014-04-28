@@ -45,3 +45,12 @@ Go sign up for the Google Group [Extreme Tech Seminar](https://groups.google.com
 ## Why ##
 
 To learn and grow.  To keep from getting too comfortable and lazy in our careers.  To learn from each other.  Because we're nerds and think programming and technology is awesome and want to share this sort of fun with other people who get excited about it too.
+
+## First Meeting ##
+
+* The first meeting is 5/5/2014.
+* The target is to read [Section 1.1](http://mitpress.mit.edu/sicp/full-text/book/book-Z-H-10.html#%_sec_1.1) entirely (including all subsections) and be prepared to discuss.
+* Kevin or Correl will lead the first meeting
+* We'll decide on the next chunk of work and the leader for meeting two at the end of the first meeting.
+
+
