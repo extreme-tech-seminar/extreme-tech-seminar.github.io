@@ -6,7 +6,7 @@ This is an announcement and an invitation to participate in the Tech Seminar bei
 
 A regular meeting to systematically study technology topics using significant works in the field as a guide.
 
-Spefically we want to start the Tech Seminar with a study of one of the most influential computer-science texts _Structure and Interpretation of Computer Programs_ by Abelson, Sussman, and Sussman commonly known as [SICP](http://mitpress.mit.edu/sicp/)
+Specifically we want to start the Tech Seminar with a study of one of the most influential computer-science texts _Structure and Interpretation of Computer Programs_ by Abelson, Sussman, and Sussman commonly known as [SICP](http://mitpress.mit.edu/sicp/)
 
 Each session will be a discussion led and moderated by someone, but it will be most valuable if everyone actively participates.  The title [seminar](http://en.wikipedia.org/wiki/Seminar) was chosen based on the description on Wikipedia which fits our idea of how this should go.
 
@@ -38,7 +38,7 @@ It is being organized by Kevin McAllister and Correl Roush.  If you have questio
 
 To participate you would do the assigned reading, work through some exercises if any, and show up ready to ask and answer questions.  The leader of the session will bring some discussion questions or exercises ready to ask the group.
 
-The text is available for free.  You can view the HTML version of it [here](http://mitpress.mit.edu/sicp/full-text/book/book.html).  Or there are some other ebook versions maintaned by third parties available [here](http://sicpebook.wordpress.com/ebook/).
+The text is available for free.  You can view the HTML version of it [here](http://mitpress.mit.edu/sicp/full-text/book/book.html).  Or there are some other ebook versions maintained by third parties available [here](http://sicpebook.wordpress.com/ebook/).
 
 The sessions will usually consist of questions/exercises driving the discussion.  If you have your own questions, bring them and don't be shy.  The session leader's questions are to help us make sure we don't just sit in a room and not cover the interesting points in the chapter.  In other words: The point is the discussion not the questions the leader comes up with.
 
