@@ -1,6 +1,6 @@
 # *Subject:* Invitation: Extreme Tech Seminar #
 
-This is an announcement and an invitation to participate in the Tech Seminar being held at CoreDial.
+This is an announcement and an invitation to participate in the Tech Seminar being held at CoreDial.  Join the Google Group [Extreme Tech Seminar](https://groups.google.com/d/forum/extreme-tech-seminar) to receive further announcements.
 
 ## What ##
 
