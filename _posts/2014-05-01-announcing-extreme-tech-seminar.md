@@ -1,10 +1,12 @@
 ---
-title: Invitation - Extreme Tech Seminar
+layout: post
+title: Announcing the Extreme Tech Seminar
 author: Kevin McAllister
-layout: page
 ---
 
-This is an announcement and an invitation to participate in the Tech Seminar being held at CoreDial.  Join the Google Group [Extreme Tech Seminar](https://groups.google.com/d/forum/extreme-tech-seminar) to receive further announcements.
+We'd like to announce and invite you to attend the new Extreme Tech Seminar, a regular meeting to systematically study technology topics using significant works in the field, beginning with the seminal text _Structure and Interpretation of Computer Programs_!
+
+Join the Google Group [Extreme Tech Seminar](https://groups.google.com/d/forum/extreme-tech-seminar) to receive further announcements.
 
 ## What ##
 
@@ -60,3 +62,4 @@ To learn and grow.  To keep from getting too comfortable and lazy in our careers
 * We'll decide on the next chunk of work and the leader for meeting two at the end of the first meeting.
 
 This is less than a week away, so sign up and get some study in.
+
