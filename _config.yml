@@ -1,3 +1,8 @@
-name: Your New Jekyll Site
+name: Extreme Tech Seminar
+description: nerds learning together
+
 markdown: redcarpet
 pygments: true
+
+disqus: false
+google-analytics: false

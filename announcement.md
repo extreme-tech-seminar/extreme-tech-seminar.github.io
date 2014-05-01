@@ -1,4 +1,8 @@
-# *Subject:* Invitation: Extreme Tech Seminar #
+---
+title: Invitation - Extreme Tech Seminar
+author: Kevin McAllister
+layout: page
+---
 
 This is an announcement and an invitation to participate in the Tech Seminar being held at CoreDial.  Join the Google Group [Extreme Tech Seminar](https://groups.google.com/d/forum/extreme-tech-seminar) to receive further announcements.
 

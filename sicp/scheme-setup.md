@@ -1,4 +1,8 @@
-# Scheme Environment Setup #
+---
+title: Scheme Environment Setup
+author: Kevin McAllister
+layout: default
+---
 
 Since [SICP](http://mitpress.mit.edu/sicp/) work is done in [scheme](http://en.wikipedia.org/wiki/Scheme_(programming_language)) it makes sense to put some notes together on how I got that setup.  I'll write that up for emacs on Mac OS X since that is the compute environment I use.  
 

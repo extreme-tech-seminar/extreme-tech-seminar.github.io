@@ -1,4 +1,8 @@
-# emacs and other schemes #
+---
+title: Emacs and Other Schemes
+author: Kevin McAllister
+layout: page
+---
 
 I've done some additional playing with some Lisps and wanted to document the effort I went to set those up with emacs on my Mac OS X machine.  Again I am using emacs installed with [Homebrew](http://brew.sh) and see below for using Geiser with Racket and Guile which are other programming language environments.
 
