@@ -1,5 +1,6 @@
 name: Extreme Tech Seminar
 description: nerds learning together
+baseurl: /extreme-tech-seminar
 
 markdown: redcarpet
 pygments: true
