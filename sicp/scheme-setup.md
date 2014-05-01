@@ -1,24 +1,48 @@
 ---
 title: Scheme Environment Setup
-author: Kevin McAllister
-layout: default
+layout: page
 ---
 
-Since [SICP](http://mitpress.mit.edu/sicp/) work is done in [scheme](http://en.wikipedia.org/wiki/Scheme_(programming_language)) it makes sense to put some notes together on how I got that setup.  I'll write that up for emacs on Mac OS X since that is the compute environment I use.  
+All of the work in [SICP](http://mitpress.mit.edu/sicp/) is done in in [mit-scheme](http://en.wikipedia.org/wiki/MIT/GNU_Scheme).
+The following instructions will help you set up an environment to follow along with the coding examples and exercises.
+If you have or need instructions on how to get set up on an environment not listed below, feel free to let us know or send us a pull request.
 
-I'll cheerfully accept pull requests for other environments.
+## Ubuntu Linux
 
-## emacs scheme ##
+### Installing Emacs
 
-While I'm sure there is someone who will give us the details on doing this in emacs on an Ubuntu install, I'm going to focus on doing it on Mac OS X.
+I recommend using the latest and greatest version of emacs, which can be had from [Damien Cassou's PPA](https://launchpad.net/~cassou/+archive/emacs). To install, just add the ppa, update, and install:
 
-### Ubuntu ###
+    sudo add-apt-repository ppa:cassou/emacs
+    sudo apt-get update
+    sudo apt-get install emacs24 emacs24-el emacs24-common-non-dfsg
 
-PLACEHOLDER for someone to tell us how they set it up on their Ubunts.
+### Installing MIT Scheme
 
-### Mac OS X ###
+#### 32-bit Ubuntu
 
-#### emacs setup ####
+If you are on a 32-bit system, all you need to do is install the `mit-scheme` package from the ubuntu repository:
+
+    sudo apt-get install mit-scheme
+
+#### 64-bit Ubuntu
+
+If you are on a 64-bit system, you'll need to find a 64-bit package. Lucky for us, the folks at the University of Minnesota [have one available we can use](https://wiki.umn.edu/CSCI1901/InstallingMITScheme):
+
+    sudo apt-get install xutils-dev libx11-dev libncurses5-dev
+    sudo wget http://www-users.cselabs.umn.edu/classes/Fall-2010/csci1901/mit-scheme-x64_9.0.1-1_amd64.deb
+    sudo dpkg -i mit-scheme-x64_9.0.1-1_amd64.deb
+
+The 64-bit package installs mit scheme as `mit-scheme-x86-64`, so to launch it using the more familiar `mit-scheme` and `scheme` commands, we'll symlink it:
+
+    sudo ln -s -T /usr/local/bin/mit-scheme-x86-64 /usr/local/bin/mit-scheme
+    sudo ln -s -T /usr/local/bin/mit-scheme-x86-64 /usr/local/bin/scheme
+
+Once installed, you can start an interactive scheme session in emacs by running `M-x run-scheme`.
+
+## Mac OSX
+
+### Installing Emacs
 
 I use [Homebrew](http://brew.sh) for my emacs install since most of the other ones for Mac OS X have annoyed me in one way or another so here's how I set that up.
 
@@ -46,7 +70,7 @@ I use [Homebrew](http://brew.sh) for my emacs install since most of the other on
 
 6. Then `source .bash_profile`
 
-#### MIT scheme setup ####
+### Installing MIT Scheme
 
 1. Download and install [MIT/GNU Scheme](http://www.gnu.org/software/mit-scheme/) for Mac OS X x86-64.
 2. Download and install [XQuartz](http://xquartz.macosforge.org/landing/) if you don't already have it.
@@ -80,7 +104,7 @@ I use [Homebrew](http://brew.sh) for my emacs install since most of the other on
 
 8. To run it from the command line and enter the REPL just run `scheme` again assuming your bash knows to use /usr/local/bin as part of it's path.  `^D` to exit the REPL.  You should see the same thing as above but not in an emacs buffer.
 
-##### References #####
+### References
 * [How to run scheme with Emacs?](http://stackoverflow.com/questions/4259894/how-to-run-scheme-with-emacs)
 * [some question and info on emacs Path](http://stackoverflow.com/questions/2266905/emacs-is-ignoring-my-path-when-it-runs-a-compile-command/2566945#2566945)
 
