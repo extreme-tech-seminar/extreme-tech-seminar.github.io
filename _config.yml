@@ -3,7 +3,7 @@ description: nerds learning together
 baseurl: 
 
 markdown: redcarpet
-pygments: true
+highlighter: pygments
 
 disqus: false
 google-analytics: false
