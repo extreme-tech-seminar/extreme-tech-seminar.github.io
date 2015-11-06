@@ -1,0 +1,73 @@
+#+TITLE: Monads
+#+BEAMER_HEADER: \institute[INST]{Extreme Tech Seminar}
+#+AUTHOR: Correl Roush
+#+EMAIL: correl@gmail.com
+#+DATE: September 9, 2015
+#+OPTIONS: H:2 toc:nil ^:nil
+#+STARTUP: beamer indent
+#+COLUMNS: %45ITEM %10BEAMER_env(Env) %10BEAMER_act(Act) %4BEAMER_col(Col) %8BEAMER_opt(Opt)
+#+PROPERTY: BEAMER_col_ALL 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 0.0 :ETC
+#+LaTeX_CLASS: beamer
+#+LaTeX_CLASS_OPTIONS: [presentation,aspectratio=169]
+#+LaTeX_HEADER: \usemintedstyle{solarizeddark}
+
+* Why?
+
+** Why use Monads?
+
+#+BEGIN_CENTER
+#+ATTR_LATEX: :width .5\textwidth
+[[file:cat-why.jpg]]
+#+END_CENTER
+
+** The worst mistake of computer science
+
+[[https://www.lucidchart.com/techblog/2015/08/31/the-worst-mistake-of-computer-science/]]
+
+* How?
+
+** How do they work?
+
+#+BEGIN_CENTER
+#+ATTR_LATEX: :width .5\textwidth
+[[file:but-how.jpg]]
+#+END_CENTER
+
+** Railway-Oriented Programming
+
+[[http://fsharpforfunandprofit.com/posts/recipe-part2/]]
+
+* What?
+
+** What are they, really?
+
+#+BEGIN_CENTER
+#+ATTR_LATEX: :width .5\textwidth
+[[file:but-what-are-they.jpg]]
+#+END_CENTER
+
+** Functors, Applicatives, and Monads in Pictures
+
+[[http://adit.io/posts/2013-04-17-functors,_applicatives,_and_monads_in_pictures.html]]
+
+* Huh?
+
+** Huh?
+#+BEGIN_CENTER
+#+ATTR_LATEX: :width .5\textwidth
+[[file:math.jpg]]
+#+END_CENTER
+
+** HUH?!!
+
+#+BEGIN_QUOTE
+A monad is just a monoid in the category of endofunctors.
+#+END_QUOTE
+
+** What's the Problem?
+
+http://slides.com/julientournay/a-monad-is-just-a-monoid-in-the-category-of-endofunctors-what-s-the-problem/fullscreen#/
+
+** Monads Made Difficult
+
+http://www.stephendiehl.com/posts/monads.html
