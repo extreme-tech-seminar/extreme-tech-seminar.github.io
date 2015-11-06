@@ -1,0 +1,147 @@
+#+TITLE: Lisp Macros
+#+BEAMER_HEADER: \institute[INST]{Extreme Tech Seminar}
+#+AUTHOR: Kevin McAllister
+#+EMAIL: kevin@mcallister.ws
+#+DATE: September 23, 2015
+#+OPTIONS: H:2 toc:nil ^:nil
+#+STARTUP: beamer indent
+#+COLUMNS: %45ITEM %10BEAMER_env(Env) %10BEAMER_act(Act) %4BEAMER_col(Col) %8BEAMER_opt(Opt)
+#+PROPERTY: BEAMER_col_ALL 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 0.0 :ETC
+#+LaTeX_CLASS: beamer
+#+LaTeX_CLASS_OPTIONS: [presentation,aspectratio=169]
+#+LaTeX_HEADER: \usemintedstyle{solarizeddark}
+
+* Introduction
+
+** What?
+
+#+BEGIN_QUOTE
+... a computer language is not just a way of getting a computer to perform operations but rather that it is a novel formal medium for expressing ideas about methodology. Thus, programs must be written for people to read, and only incidentally for machines to execute.
+#+END_QUOTE
+
+- [[http://sarabander.github.io/sicp/html/Preface-1e.xhtml#Preface-1e][Structure and Interpretation of Computer Programs]]
+
+** Common Lisp
+
+#+BEGIN_SRC lisp
+(defun double (x)
+  (* x 2))
+#+END_SRC
+
+#+BEGIN_QUOTE
+Common Lisp is a general-purpose, multi-paradigm programming language. It supports a combination of procedural, functional, and object-oriented programming paradigms.
+#+END_QUOTE
+ - [[https://en.wikipedia.org/wiki/Common_Lisp][Common Lisp (wikipedia)]]
+
+** Why Common Lisp
+*** Bullets                                                           :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.6
+:END:
+- I'm just working through the examples in [[http://landoflisp.com][Land Of Lisp]] by Conrad Barski
+- Chapter 16
+*** Book                                                              :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.4
+:END:
+
+#+ATTR_LATEX: :width \textwidth
+[[file:lisp.png]]
+
+** Other Reasons
+- "In Lisp, programs are data, but the implications take a while to sink in."
+-- [[http://www.paulgraham.com/onlisptext.html][On Lisp]] by Paul Graham
+
+** Simple Example
+
+#+BEGIN_SRC lisp
+(defun add (a b)
+  (let ((x (+ a b)))
+    (format t "The sum is ~a" x)
+    x))
+#+END_SRC
+
+- Contention the let and all it's parens is ugly
+
+#+BEGIN_SRC lisp
+(defmacro let1 (var val &body body)
+  `(let ((,var ,val))
+     ,@body))
+#+END_SRC
+
+** Tada
+
+#+BEGIN_SRC lisp
+(defun add (a b)
+  (let1 (x (+ a b))
+    (format t "The sum is ~a" x)
+    x))
+#+END_SRC
+
+** Complex Example 1
+
+Let's change this
+
+#+BEGIN_SRC lisp
+(defun my-length (lst)
+  (labels ((f (lst acc)
+    (if lst
+      (f (cdr lst) (1+ acc))
+      acc)))
+    (f lst 0)))
+#+END_SRC
+
+into
+
+#+BEGIN_SRC lisp
+(defun my-length (lst)
+  (recurse (lst lst acc 0)
+    (split lst 
+      (self tail (1+ acc))
+      acc)))
+#+END_SRC
+
+** Complex Example 2
+
+- Give me a split that can do a thing
+
+#+BEGIN_SRC lisp
+(defmacro split (val yes no)
+  (let1 g (gensym)
+  `(let1 ,g ,val
+    (if ,g
+      (let ((head (car ,g))
+            (tail (cdr ,g)))
+        ,yes)
+        ,no))))
+#+END_SRC
+
+- Hygenic and Anaphoric
+  - g won't collide
+  - head and tail will be available inside the split.
+
+** Complex Example 3
+
+#+BEGIN_SRC lisp
+(defun pairs (lst) 
+  (labels ((f (lst acc) 
+      (split lst 
+        (if tail 
+          (f (cdr tail) 
+            (cons (cons head (car tail)) acc)) 
+          (reverse acc))
+        (reverse acc)))) 
+    (f lst nil)))
+
+(pairs '(a b c d e f))
+((A . B) (C . D) (E . F))
+#+END_SRC
+
+** Complex Example 4
+
+#+BEGIN_SRC lisp
+(defmacro recurse (vars &body body) 
+  (let1 p (pairs vars) 
+    `(labels ((self ,(mapcar #'car p) ,@body)) 
+     (self ,@(mapcar #'cdr p)))))
+#+END_SRC
