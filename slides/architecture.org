@@ -1,0 +1,55 @@
+#+TITLE: Software Architecture
+#+BEAMER_HEADER: \institute[INST]{Extreme Tech Seminar}
+#+AUTHOR: Correl Roush
+#+EMAIL: correl@gmail.com
+#+DATE: October 7, 2015
+#+OPTIONS: H:2 toc:nil ^:nil
+#+STARTUP: beamer indent
+#+COLUMNS: %45ITEM %10BEAMER_env(Env) %10BEAMER_act(Act) %4BEAMER_col(Col) %8BEAMER_opt(Opt)
+#+PROPERTY: BEAMER_col_ALL 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 0.0 :ETC
+#+LaTeX_CLASS: beamer
+#+LaTeX_CLASS_OPTIONS: [presentation,aspectratio=169]
+#+LaTeX_HEADER: \usemintedstyle{solarizeddark}
+
+* Big Ball of Mud
+
+** Big Ball of Mud
+
+#+BEGIN_CENTER
+http://laputan.org/mud/
+#+END_CENTER
+
+* Robert C. Martin
+
+** Uncle Bob Video
+
+#+BEGIN_CENTER
+- [[https://www.youtube.com/watch?v=p0O1VVqRSK0#t=12m55s][I Expect...]]
+- [[https://www.youtube.com/watch?v=p0O1VVqRSK0#t=19m15s][Stable Productivity]]
+- [[https://www.youtube.com/watch?v=p0O1VVqRSK0#t=27m10s][Fearless Competence]]
+#+END_CENTER
+
+** SOLID Principles
+
+#+BEGIN_CENTER
+[[https://en.wikipedia.org/wiki/SOLID_(object-oriented_design)][SOLID (object-oriented design)]]
+#+END_CENTER
+
+* Clean API Design
+
+** Boolean Traps
+
+#+BEGIN_CENTER
+[[http://ariya.ofilabs.com/2011/08/hall-of-api-shame-boolean-trap.html][Hall of API Shame - Boolean Trap]]
+#+END_CENTER
+
+* SICP
+
+** Abstraction Barriers
+
+#+BEGIN_CENTER
+#+ATTR_LATEX: :width .5\textwidth
+[[file:Fig2.1d.std.png]]
+
+[[http://sarabander.github.io/sicp/html/2_002e1.xhtml#g_t2_002e1_002e2][SICP 2.1.2 - Abstraction Barriers]]
+#+END_CENTER
