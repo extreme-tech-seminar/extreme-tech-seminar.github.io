@@ -1,0 +1,160 @@
+#+TITLE: Actors
+#+BEAMER_HEADER: \institute[INST]{Extreme Tech Seminar}
+#+AUTHOR: Correl Roush
+#+EMAIL: correl@gmail.com
+#+DATE: October 21, 2015
+#+OPTIONS: H:2 toc:nil ^:nil
+#+STARTUP: beamer indent
+#+COLUMNS: %45ITEM %10BEAMER_env(Env) %10BEAMER_act(Act) %4BEAMER_col(Col) %8BEAMER_opt(Opt)
+#+PROPERTY: BEAMER_col_ALL 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 0.0 :ETC
+#+LaTeX_CLASS: beamer
+#+LaTeX_CLASS_OPTIONS: [presentation,aspectratio=169]
+#+LaTeX_HEADER: \usemintedstyle{solarizeddark}
+
+* Akka Concurrency
+
+** Akka Concurrency
+
+#+BEGIN_CENTER
+#+ATTR_LATEX: :width 0.3\textwidth
+[[file:akkaCover185x240.png]]
+
+*[[http://www.artima.com/samples/AkkaDoesConcurrencyCh4.pdf][Akka Concurrency]]*
+
+Derek Wyatt
+#+END_CENTER
+
+** Topics
+
+- Concurrency through messaging
+- Concurrency through delegation
+- Delegation for safety
+- Doing one thing at a time
+- Reactive programming
+
+** Concurrency through messaging
+
+#+BEGIN_QUOTE
+You send an actor a message that tells it to do something, which it
+does presumably quickly and well, and then it tells you what it did.
+You can scale this model out to thousands or millions (or billions?)
+of actors and many orders of magnitude more messages and your
+applications are still reasonable, not to mention huge and fast.
+#+END_QUOTE
+
+** Safety
+
+#+BEGIN_QUOTE
+There’s nothing wrong with creating child actors for the sole purpose
+of putting them in harm’s way. In fact, it’s a very good thing. So
+don’t be afraid of giving birth to an actor only to have him meet his
+ultimate demise micro-seconds later. He’s more than happy to give his
+life in the service of his parent’s good.
+#+END_QUOTE
+
+** Doing one thing at a time
+
+#+BEGIN_QUOTE
+Actors only do one thing at a time; that’s the model of concurrency. If you
+want to have more than one thing happen simultaneously, then you need to
+create more than one actor to do that work.
+#+END_QUOTE
+
+** Reactive programming
+
+#+BEGIN_QUOTE
+Actor programming is /reactive programming/. Another way to say this
+is that it’s /event-driven programming/. Event-driven programming has
+been with us for a long time, but it’s arguably never been epitomized
+as much as with actor programming. The reason for this is that actors
+naturally sit there just waiting for something to happen (i.e.,
+waiting for a message). It’s not the act of /sending/ a message that’s
+important; it’s the act of /receiving/ one that really matters.
+#+END_QUOTE
+
+* Designing for Actor Based Systems
+
+** Designing for Actor Based Systems
+
+#+BEGIN_CENTER
+#+ATTR_LATEX: :width 0.3\textwidth
+[[file:erlware.png]]
+
+*[[http://blog.erlware.org/designing-for-actor-based-systems/][Designing for Actor Based Systems]]*
+
+Martin J. Logan
+#+END_CENTER
+
+** Processes
+
+One process for each truly concurrent *activity* in the system.
+
+** Vending machine activities
+
+- Putting coins into the slot
+- Handling coins
+- Handling selections
+- Fetching the coke and putting it into the pickup tray
+- Cooling the soda
+
+** Organizing processes
+
+#+BEGIN_CENTER
+#+BEGIN_SRC dot :file actors-processes.png
+  digraph processes {
+          graph [bgcolor=transparent,color=white];
+          node [style=filled];
+          edge [color=white];
+
+          node [shape=box,fillcolor=grey];
+          app_sup [label="Supervisor"];
+          vending_sup [label="Supervisor"];
+
+          node [shape=ellipse,fillcolor=white];
+          cooling [label="Cooling System"];
+          selections [label="Handling Selections"];
+          fetching [label="Fetching Soda"];
+
+          app_sup -> cooling;
+          app_sup -> vending_sup;
+
+          vending_sup -> selections;
+          vending_sup -> fetching;
+  }
+#+END_SRC
+
+#+ATTR_LATEX: :width 0.5\textwidth
+#+RESULTS:
+[[file:actors-processes.png]]
+
+#+END_CENTER
+
+* Technologies
+
+** Technologies
+
+#+BEGIN_CENTER
+LANGUAGES AND TOOLS
+#+END_CENTER
+
+** Erlang/OTP
+
+#+BEGIN_CENTER
+#+ATTR_LATEX: :width 0.3\textwidth
+[[file:erlang.jpg]]
+#+END_CENTER
+
+- Erlang :: Provides lightweight processes and transparent
+     distribution
+- OTP :: Provides frameworks for actors and supervisors via callback
+     modules.
+
+** Scala + Akka
+#+BEGIN_CENTER
+#+ATTR_LATEX: :width 0.3\textwidth
+[[file:scala-logo-white.png]] [[file:akka_full_color.png]]
+#+END_CENTER
+
+- Scala :: A hybrid functional language on the JVM
+- Akka :: a toolkit and runtime for building highly concurrent,
+     distributed, and resilient message-driven applications
