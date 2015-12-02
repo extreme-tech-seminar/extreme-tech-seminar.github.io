@@ -1,0 +1,137 @@
+#+TITLE: Git DAGs
+#+BEAMER_HEADER: \institute[INST]{Extreme Tech Seminar}
+#+AUTHOR: Correl Roush
+#+EMAIL: correl@gmail.com
+#+DATE: December 2, 2015
+#+OPTIONS: H:2 toc:nil ^:nil
+#+STARTUP: beamer indent
+#+COLUMNS: %45ITEM %10BEAMER_env(Env) %10BEAMER_act(Act) %4BEAMER_col(Col) %8BEAMER_opt(Opt)
+#+PROPERTY: BEAMER_col_ALL 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 0.0 :ETC
+#+LaTeX_CLASS: beamer
+#+LaTeX_CLASS_OPTIONS: [presentation,aspectratio=169]
+#+LaTeX_HEADER: \usemintedstyle{solarizeddark}
+
+#+begin_src emacs-lisp :exports results :results silent
+  (defun vector-image (name)
+    (let ((basename (concat (file-name-base buffer-file-name) "-" name)))
+      (message (format "backend is %s" org-export-current-backend))
+      (cond ((org-export-derived-backend-p org-export-current-backend
+                                           'latex)
+             (concat basename ".eps"))
+            (t (concat basename ".svg")))))
+#+end_src
+
+* Idea
+
+** Visualizing Git Branches
+#+BEGIN_SRC dot :file (vector-image "autogroup")
+  digraph git {
+          bgcolor="transparent";
+          rankdir="LR";
+          node[color=white, fontcolor=grey, width=0.15,height=0.15,shape=point,fontsize=8.0];
+          edge[color=grey, weight=2,arrowhead=none];
+
+          1[group="master"];
+          2[group="master"];
+          3[group="master"];
+          4[group="master"];
+          5[group="master"];
+          6[group="develop"];
+          7[group="develop"];
+          8[group="develop"];
+          9[group="develop"];
+          10[group="develop"];
+          11[group="wip"];
+          12[group="wip"];
+          
+          1 -> 2 -> 3 -> 4 -> 5;
+          5[shape=box,label="develop"];
+          2 -> 6 -> 7 -> 8 -> 9 -> 10;
+          10[shape=box,label="visualizing-git-branches"];
+          7 -> 11 -> 12 -> 9;
+  }
+#+END_SRC
+
+#+RESULTS:
+[[file:git-dags-autogroup.svg]]
+
+** The Idea
+Digging through Derek Feichtinger's [[https://github.com/dfeich/org-babel-examples][org-babel examples]] (which I came
+across via [[http://irreal.org/blog/?p%3D4162][irreal.org]]), I found he had some great examples of
+displaying git-style graphs using graphviz. I thought it'd be a fun
+exercise to generate my own graphs based on his graphviz source using
+elisp, and point it at actual git repos.
+
+** DAGs
+#+BEGIN_CENTER
+#+ATTR_LATEX: :width 0.5\textwidth
+[[file:dags.png]]
+#+END_CENTER
+** Directed Acyclic Graphs
+#+BEGIN_QUOTE
+In mathematics and computer science, a directed acyclic graph (DAG),
+is a directed graph with no directed cycles. That is, it is formed by
+a collection of vertices and directed edges, each edge connecting one
+vertex to another, such that there is no way to start at some vertex v
+and follow a sequence of edges that eventually loops back to v again.
+
+-- Wikipedia
+#+END_QUOTE
+** Git as a DAG
+
+http://eagain.net/articles/git-for-computer-scientists/
+* Building graphs
+** Building Graphs
+http://correl.phoenixinquis.net/2015/07/12/git-graphs.html
+* Group Exercise
+** Collapsing History
+Collapsing this:
+#+BEGIN_SRC dot :file (vector-image "collapse-before")
+  digraph G {
+          rankdir="LR";
+          bgcolor="transparent";
+          node[color=white,width=0.15,height=0.15,shape=point];
+          edge[color=grey,weight=2,arrowhead=none];
+          node[group=main];
+          1 -> 2 -> 3 -> 4 -> 5;
+          node[group=branch];
+          2 -> 6 -> 7 -> 8 -> 9 -> 10 -> 4;
+  }
+#+END_SRC
+
+#+RESULTS:
+[[file:git-dags-collapse-before.svg]]
+
+To this:
+#+BEGIN_SRC dot :file (vector-image "collapse-after")
+  digraph G {
+          rankdir="LR";
+          bgcolor="transparent";
+          node[color=white,width=0.15,height=0.15,shape=point];
+          edge[color=grey,weight=2,arrowhead=none];
+          node[group=main];
+          1 -> 2 -> 3 -> 4 -> 5;
+          node[group=branch];
+          2 -> 6;
+          6 -> 10[style=dashed,fontcolor=grey,label="+3"];
+          10 -> 4;
+  }
+#+END_SRC
+
+#+RESULTS:
+[[file:git-dags-collapse-after.svg]]
+
+Something like this would be handy for concisely graphing the state of
+multiple ongoing development branches (say, to get a picture of what's
+been going on since the last release, and what's still incomplete).
+** How to collapse history
+1. Determine what portions of a graph aren't worth drawing
+   - Stretches of non-parent, non-parented commits
+   - Merged branches (except branches we always want to show)
+2. Determine how to apply a set of criteria to a graph
+   - Can it be done w/o scanning the whole graph?
+* Final Thoughts
+** Final Thoughts
+#+BEGIN_CENTER
+Final thoughts
+#+END_CENTER
