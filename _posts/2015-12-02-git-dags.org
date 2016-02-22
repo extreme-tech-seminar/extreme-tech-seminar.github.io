@@ -1,5 +1,6 @@
 #+TITLE: Meeting: Collapsing Git Graphs
 #+AUTHOR: Correl Roush
+#+DATE: 2015-12-03 23:49
 #+STARTUP: indent inlineimages showall hideblocks
 #+OPTIONS: toc:nil num:nil
 #+PROPERTY: header-args :exports results :results silent
