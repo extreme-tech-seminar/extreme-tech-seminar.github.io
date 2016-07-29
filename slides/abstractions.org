@@ -1,0 +1,141 @@
+#+TITLE: Abstractions
+#+BEAMER_HEADER: \institute[INST]{Extreme Tech Seminar}
+#+AUTHOR: Correl Roush
+#+EMAIL: correl@gmail.com
+#+DATE: xts-v50_20160727
+#+OPTIONS: toc:nil H:2 num:nil timestamp:nil author:nil tags:nil ^:nil
+#+STARTUP: indent
+#+REVEAL_THEME: league
+
+* Introduction
+
+** Abstraction According To Wikipedia
+
+#+BEGIN_QUOTE
+In software engineering and computer science, abstraction is a
+technique for managing complexity of computer systems. It works by
+establishing a level of complexity on which a person interacts with
+the system, suppressing the more complex details below the current
+level.
+
+-- Wikipedia
+#+END_QUOTE
+
+** Abstraction According to Bob Martin
+#+BEGIN_QUOTE
+Abstraction is the elimination of the irrelevant and the amplification
+of the essential
+
+-- Robert C. Martin
+#+END_QUOTE
+
+** What can we abstract?
+- Control (subroutines, control flow, language structure, ...)
+- Data (data types, nested structures, ...)
+** Barriers                                                         :ATTACH:
+:PROPERTIES:
+:Attachments: Screenshot%202016-07-27%20at%201.09.17%20AM.png
+:ID:       f5739465-4ff4-40d4-a4cd-f10e6f7dcb67
+:END:
+
+#+CAPTION: SICP 2.1.2: Abstraction Barriers
+[[http://sarabander.github.io/sicp/html/2_002e1.xhtml#g_t2_002e1_002e2][file:data/f5/739465-4ff4-40d4-a4cd-f10e6f7dcb67/Screenshot%202016-07-27%20at%201.09.17%20AM.png]]
+#+BEGIN_NOTES
+- What Martin Fowler describes as "seams"
+- "Black box" abstractions
+
+[[http://sarabander.github.io/sicp/html/2_002e1.xhtml#g_t2_002e1_002e2]]
+#+END_NOTES
+
+* OOP
+
+** Classes
+- Encapsulate state
+- Hide implementation
+** Inheritance
+Isolate, re-use, and re-implement common interfaces
+** Traits & Mixins
+Isolate cross-cutting concerns
+** Sometimes things go wrong                                         :ATTACH:
+:PROPERTIES:
+:Attachments: object_oriented_programing_in_theory_vs_practice.png
+:ID:       08deb3e6-0a18-4cc0-9e46-61d4658ae27f
+:reveal_data_state: alert
+:END:
+[[http://xahlee.info/comp/oop.html][file:data/08/deb3e6-0a18-4cc0-9e46-61d4658ae27f/object_oriented_programing_in_theory_vs_practice.png]]
+* Functional
+
+** Purity
+- Purity :: Separate and manage effects
+- Immutability :: Eliminate time as a variable
+** Higher-Order Functions
+
+** Data Structures
+- Closure property
+- Immutable data
+** Typeclasses
+"Universal" Interfaces
+
+*** Equality (Eq)
+#+BEGIN_SRC haskell
+  class Eq a where
+    (==) :: a -> a -> Bool
+    (/=) :: a -> a -> Bool
+    x == y = not (x /= y)
+    x /= y = not (x == y)
+#+END_SRC
+*** Mappable ([[http://learnyouahaskell.com/making-our-own-types-and-typeclasses#the-functor-typeclass][Functor]])
+#+BEGIN_SRC haskell
+  class Functor f where
+    fmap :: (a -> b) -> f a -> f b
+#+END_SRC
+
+#+BEGIN_NOTES
+http://learnyouahaskell.com/making-our-own-types-and-typeclasses#the-functor-typeclass
+#+END_NOTES
+** How is this better?
+:PROPERTIES:
+:reveal_data_state: soothe
+:END:
+- Abstractions are more fundamental
+- More easily composed and testable
+- More flexible
+  - =iterable.map= vs. =map iterable=
+  - Monads can represent sequences (List) and chained operations
+    (Maybe, IO)
+
+#+BEGIN_NOTES
+- http://home.pipeline.com/~hbaker1/Iterator.html
+- http://sarabander.github.io/sicp/html/3_002e5.xhtml#g_t3_002e5
+#+END_NOTES
+
+* Processes
+
+** Concurrency
+- Multiple processes can run concurrently
+- Systems can be broken down into smaller, coordinated programs
+** Actors
+- Encapsulate state
+- Communicate via messages
+** Supervision Trees
+Isolate error handling
+* Metaprogramming
+** Macros
+- Language pre-processors
+- Syntactic macros (e.g., Lisp macros)
+
+#+BEGIN_NOTES
+Pre-processors may not preserve the lexical structure reliably, while
+syntactic macros that operate on the abstract syntax tree do.
+#+END_NOTES
+** Domain-Specific Languages
+- Prolog :: Logic
+- Chef :: Provisioning
+- LaTeX :: Typesetting
+- Lilypond :: Music
+* Wrapping Up                                                        :ATTACH:
+:PROPERTIES:
+:Attachments: chunt-whatsnext.png
+:ID:       bc7dda01-efb2-4542-9996-17a38155d9a5
+:END:
+[[file:data/bc/7dda01-efb2-4542-9996-17a38155d9a5/chunt-whatsnext.png]]
